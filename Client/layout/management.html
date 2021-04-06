@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Company Management</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/register/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <div class="container-fluid">
+        <div class="section">
+            <div class="title-page">Company Management</div>
+            <div class="content">
+                <div class="feild">
+                    <div hidden>11111</div>
+                    <label class="label">
+                        <p>Company Code <span>*</span></p>
+                    </label>
+                    <input id="code" type="text" placeholder="Company Code" required>
+                    <input id="name" class="form-control" type="text" placeholder="Please enter Company Name" required>
+                </div>
+
+                <div class="feild">
+                    <div class="label">
+                        <p>Email <span>*</span></p>
+                    </div>
+                    <input class="form-control" id="email" type="text" placeholder="Please enter Email" required>
+                </div>
+                <div class="feild">
+                    <div class="label">
+                        <p>Phone Number <span>*</span></p>
+                    </div>
+                    <input class="form-control" id="phone" type="text" placeholder="Please enter Phone Number" required>
+
+                </div>
+                <div class="feild">
+                    <div class="label">
+                        <p>Status</p>
+                    </div>
+                    <div class="ml-4 mb-0 form-group">
+                        <select class="form-control" name="" id="status">
+                            <option value="">Select status</option>
+                            <option value="WORKING">WORKING</option>
+                            <option value="STOPPED">STOPPED</option>
+                            <option value="PENDING">PENDING</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="perform">
+                <button class="confirm" id="register">Register</button>
+                <button class="search" id="search">Search</button>
+                <button class="back" id="back">Back</button>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="title">
+                            <th scope="col">Code</th>
+                            <th scope="col">Company</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Status</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                            <td>1</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td class="status">
+                                <p>Stopped</p>
+                            </td>
+                            <td class="performx" id="cc">
+                                <button class="detail">Detail</button>
+                                <button class="delete">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td class="status">
+                                <p>Stopped</p>
+                            </td>
+                            <td class="performx">
+                                <button class="detail">Detail</button>
+                                <button class="delete">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry the Bird</td>
+                            <td>@twitter</td>
+                            <td>OK</td>
+                            <td class="status">
+                                <p>Stopped</p>
+                            </td>
+                            <td class="performx">
+                                <button class="detail">Detail</button>
+                                <button class="delete">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry the Bird</td>
+                            <td>@twitter</td>
+                            <td>OK</td>
+                            <td class="status">
+                                <p>Stopped</p>
+                            </td>
+                            <td class="performx">
+                                <button class="detail">Detail</button>
+                                <button class="delete">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry the Bird</td>
+                            <td>@twitter</td>
+                            <td>OK</td>
+                            <td class="status">
+                                <p>Stopped</p>
+                            </td>
+                            <td class="performx">
+                                <button class="detail">Detail</button>
+                                <button class="delete">Delete</button>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="myPages">
+                <div class="count">Row per page
+                    <div class="form-group">
+                        <select class="form-control ml-2" name="" id="row-page">
+                            <option id="row-page1" value="1">1</option>
+                            <option id="row-page2" value="2">2</option>
+                            <option id="row-page5" value="5">5</option>
+                            <option id="row-page10" value="10" selected>10</option>
+                        </select>
+                    </div>
+                </div>
+
+                <nav aria-label="Page navigation example" class="d-flex align-items-center font-weight-bold">
+                    <div class="display mr-5">
+                        <p><span id="start">0</span> - <span id="end">0</span> of <span id="total">0</span></p>
+                    </div>
+                    <ul class="pagination">
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="../javascript/javascript.js"></script>
+
+
+
+</body>
+
+</html>

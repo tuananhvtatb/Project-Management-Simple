@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Detail</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/register/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <div class="container-fluid">
+        <div class="section">
+            <div class="title-page">Company Detail</div>
+            <form class="content needs-validation" id="cert-form" novalidate>
+                <div class="feild form-group">
+                    <label class="label">
+                        <p>Company Code <span>*</span></p>
+                    </label>
+                    <input type="text" class="form-control" maxlength="6" pattern="^[a-zA-Z0-9_]*$" id="code"
+                        placeholder="Please enter Company Code" required>
+                    <div class="invalid-feedback text-check">
+                        Code chỉ bao gồm Chữ cái và số, độ dài không quá 6 kí tự.
+                    </div>
+                </div>
+                <div class="feild form-group">
+                    <label class="label">
+                        <p>Company Name <span>*</span></p>
+                    </label>
+                    <input type="text" class="form-control" id="name" placeholder="Please enter Company Name" required>
+                    <div class="invalid-feedback text-check">
+                        Vui lòng không để trống.
+                    </div>
+                </div>
+                <div class="feild form-group">
+                    <label class="label">
+                        <p>Address <span>*</span></p>
+                    </label>
+                    <input type="text" class="form-control" id="address" placeholder="Please enter Address" required>
+                    <div class="invalid-feedback text-check">
+                        Vui lòng không để trống.
+                    </div>
+                </div>
+                <div class="feild form-group">
+                    <label class="label">
+                        <p>Email <span>*</span></p>
+                    </label>
+                    <input type="email" class="form-control"
+                        pattern="^[a-zA-Z][\w-]+@([\w]+\.[\w]+|[\w]+\.[\w]{2,}\.[\w]{2,})$" id="email"
+                        placeholder="Please enter Email" required>
+                    <div class="invalid-feedback text-check">
+                        Email không hợp lệ.
+                    </div>
+                </div>
+                <div class="feild form-group">
+                    <label class="label">
+                        <p>Phone Number <span>*</span></p>
+                    </label>
+                    <input type="text" class="form-control" pattern="(\+84|0)\d{9,10}" id="phone"
+                        placeholder="Please enter Phone Number" required>
+                    <div class="invalid-feedback text-check">
+                        Số điện thoại không hợp lệ.
+                    </div>
+                </div>
+                <div class="feild form-group">
+                    <label class="label">
+                        <p>Website </p>
+                    </label>
+                    <input type="text" class="form-control" id="website" placeholder="Please enter Website">
+                </div>
+                <div class="feild">
+                    <div class="label">
+                        <p>Status</p>
+                    </div>
+                    <div class="ml-4 mb-0 form-group">
+                        <select class="form-control" name="" id="status">
+                            <option value="">Select status</option>
+                            <option value="WORKING">WORKING</option>
+                            <option value="STOPPED">STOPPED</option>
+                            <option value="PENDING">PENDING</option>
+                        </select>
+                    </div>
+                </div>
+                <hr id="hr" />
+                <div class="perform">
+                    <button class="confirm" id="confirm">Update</button>
+                    <button class="back" id="back">Back</button>
+                </div>
+            </form>
+
+
+        </div>
+
+    </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="../javascript/javascript-detail.js"></script>
+</body>
+
+</html>
